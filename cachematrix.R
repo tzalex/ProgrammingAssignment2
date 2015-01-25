@@ -1,5 +1,9 @@
 ## Two functions that cache the inverse of a square
-## invertible matrix
+## invertible matrix, based on the Example: Caching
+## the Mean of a Vector.
+## Computing the inverse of a square matrix can be done
+## with the solve function. If x is a square invertible
+## matrix, then solve(x) returns its inverse
 ## for testing:
 ## > a<-matrix(c(1,2,3,4),2,2)
 ## > b<-makeCacheMatrix(a)
@@ -7,10 +11,11 @@
 ## the result should be:
 ##     [,1] [,2]
 ## [1,] -2  1.5
-## [2,] 1  -0.5
+## [2,]  1 -0.5
+
 
 ## The first function creates a special "matrix" object
-## that can cache its inverse
+## that can cache its inverse matrix
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -24,6 +29,7 @@ makeCacheMatrix <- function(x = matrix()) {
        setinverse = setinverse,
        getinverse = getinverse)
 }
+
 
 ## The second function computes the inverse of the
 ## special "matrix" returned by makeCacheMatrix above.
